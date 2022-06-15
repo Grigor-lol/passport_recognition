@@ -1,0 +1,41 @@
+#:import platform kivy.utils.platform
+<MyWidget>:
+    orientation:"vertical"
+    id:my_widget
+
+
+    #BoxLayout:
+        #orientation:"vertical"
+        #spacing:10
+        #id:layout1
+    FileChooserIconView:
+        id:filechooser
+        size_hint_x:None
+        size_hint_y:None
+        width: 500
+        height: 200
+        rootpath: '/storage/emulated/0/' if platform == 'android' else '/'
+        on_selection:my_widget.selected(filechooser.selection)
+
+
+    BoxLayout
+        orientation:"horizontal"
+        spacing:10
+        id:layout2
+        Image:
+
+            id:image
+            source:""
+
+        Label:
+            id:label
+            color:
+    Button:
+        id:button
+        pos_hint: {'center_x': 0.5, 'center_y': 1}
+        size_hint: 0.4,0.1
+        text:"Recognise"
+        on_press:my_widget.recognise()
+
+
+
