@@ -34,9 +34,6 @@ class MyWidget(BoxLayout):
                 self.s.send(file_data)
                 file_data = file.read(4096)
                 if not file_data: break
-                # if len(file_data) == 0:
-                #     self.s.send("1".encode())
-                #     print("lol")
         reply = self.s.recv(4096).decode()
         str_reply = str(reply)
         self.ids.label.text = str_reply
