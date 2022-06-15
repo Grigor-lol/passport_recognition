@@ -67,29 +67,3 @@ while True:
                 res_str = res.encode()
                 client_socket.send(res_str)
 
-
-
-
-'''
-#try:
-    # self.ids.label.text += "lol"
-    #получить картинку
-    
-    passport = image_processing.Passport(self.ids.image.source)
-    isProcessSuccess = passport.processFullName()
-    if (isProcessSuccess == False):
-        print('error')
-    else:
-
-        surnameFilePaths = passport.getProcessedSurnameFilePaths()
-        nameFilePaths = passport.getProcessedNameFilePaths()
-        patronymicFilePaths = passport.getProcessedPatronymicFilePaths()
-        name = tesseract.ocr_core('img/name.jpg')
-        surname = tesseract.ocr_core('img/surname.jpg')
-        patronymic = tesseract.ocr_core('img/patronymic.jpg')
-
-
-
-except:
-    pass
-    '''
